@@ -1,0 +1,30 @@
+.container-fluid {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.navbar {
+    background-color: black;
+    opacity: 0.7; 
+    width: 100%;
+}
+
+.navbar:hover {
+    opacity: 1;
+}
+
+.fa-search {
+    opacity: 0.7;
+    cursor: pointer;
+    outline: none;
+}
+
+.footer {
+    margin-top: 25%;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    padding: 5%;
+    width: 100%;
+    text-align: center;
+    opacity: 0.7;
+}

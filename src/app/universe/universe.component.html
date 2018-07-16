@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row" *ngIf="universe.length>0">
+    <div *ngFor="let element of universe | orderBy: ['name','aliases[0]']" class="col-md-4 mb-4">
+      <div class="col-12" *ngIf="element.isbn">
+        <div class="booksCard card text-center border border-danger">
+          <div class="card-header text-danger text-uppercase font-weight-bold">
+            {{element.name}}
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>ISBN : </b>{{element.isbn}}</p>
+            <a [routerLink]="['/books',element.url.split('/').reverse()[0]]" class="btn btn-danger">Details</a>
+          </div>
+          <div class="card-footer text-muted">Book Card</div>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="element.region || element.coatOfArms">
+        <div class="houseCard card text-center border border-success">
+          <div class="card-header text-success text-uppercase font-weight-bold">
+            {{element.name}}
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>Region : </b>{{element.region}}</p>
+            <a [routerLink]="['/houses',element.url.split('/').reverse()[0]]" class="btn btn-success">Details</a>
+          </div>
+          <div class="card-footer text-muted">House Card</div>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="element.gender">
+        <div class="characterCard card text-center border border-info">
+          <div class="card-header text-info text-uppercase font-weight-bold">
+            {{element.name?element.name:element.aliases[0]}}
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>Gender : </b>{{element.gender}}</p>
+            <a [routerLink]="['/characters',element.url.split('/').reverse()[0]]" class="btn btn-info">Details</a>
+          </div>
+          <div class="card-footer text-muted">Character Card</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

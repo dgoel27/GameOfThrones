@@ -1,0 +1,23 @@
+<div class="container bg-light">
+  <div class="row text-danger" *ngIf="currentBook">
+    <div class="col-md-12">
+      <h2 class="text-light text-uppercase bg-danger">{{currentBook.name?currentBook.name:'N/A'}}</h2>
+      <hr>
+      <p *ngIf="currentBook.authors.length!=undefined && currentBook.authors.length>0">Written by <b><span *ngFor="let author of currentBook.authors;let first=first;let last=last">{{author?author:'N/A'}}{{last ? '' : ', '}}</span></b></p>
+      <hr>
+      <p>Published by <b>{{currentBook.publisher?currentBook.publisher:'N/A'}}</b></p>
+      <hr>
+      <p>Released on <b>{{currentBook.released | date}}</b></p>
+      <hr>
+      <p>Country : <b>{{currentBook.country?currentBook.country:'N/A'}}</b></p>
+      <hr>
+      <p>ISBN : <b>{{currentBook.isbn?currentBook.country:'N/A'}}</b></p>
+      <hr>
+      <p>No. of Pages : <b>{{currentBook.numberOfPages?currentBook.numberOfPages:'N/A'}}</b></p>
+      <hr>
+      <p>Media Type - <b>{{currentBook.mediaType?currentBook.mediaType:'N/A'}}</b></p>
+      <hr>
+      <a class="btn btn-danger text-light" (click)="goBackToPreviousPage()">Go Back</a>
+    </div>
+  </div>
+</div>

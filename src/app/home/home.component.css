@@ -1,0 +1,68 @@
+.books {
+    box-sizing: border-box;
+    box-shadow: 10px 5px 5px red;
+    margin-top: 20vh;
+    height:60vh;
+    width: 100vw;
+    border: 5px solid red;
+    opacity: 0.7;
+}
+
+.houses {
+    box-sizing: border-box;
+    box-shadow: 10px 5px 5px green;
+    margin-top: 20vh;
+    height:60vh;
+    width: 100vw;
+    border: 5px solid green;
+    opacity: 0.7;
+}
+
+.characters {
+    box-sizing: border-box;
+    box-shadow: 10px 5px 5px rgba(0, 132, 255, 0.87);
+    margin-top: 20vh;
+    height:60vh;
+    width: 100vw;
+    border: 5px solid rgba(0, 132, 255, 0.87);
+    opacity: 0.7;
+}
+
+.coming-soon {
+    box-sizing: border-box;
+    box-shadow: 10px 5px 5px yellow;
+    margin-top: 20vh;
+    height:60vh;
+    width: 100vw;
+    border: 5px solid yellow;
+    opacity: 0.7;
+}
+
+.books:hover, .houses:hover, .characters:hover, .coming-soon:hover {
+    opacity: 1;
+}
+
+a {
+    text-decoration : none;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .books, .houses, .characters, .coming-soon  {
+        opacity: 1;
+    }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+
+    .books, .houses, .characters, .coming-soon  {
+        opacity: 1;
+        height: 40vh;
+    }
+
+    h5 {
+        font-size: 30px;
+    }
+
+}

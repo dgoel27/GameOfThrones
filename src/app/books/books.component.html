@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" *ngIf="allBooks.length>0">
+    <div *ngFor="let book of allBooks" class="col-md-4 mb-4">
+      <div class="card text-center border border-danger">
+        <div class="card-header text-danger text-uppercase font-weight-bold">
+          {{book.name}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <b>Author : </b>{{book.authors[0]}}</p>
+          <p class="card-text">
+            <b>ISBN : </b>{{book.isbn}}</p>
+          <a [routerLink]="['/books',book.url.split('/').reverse()[0]]" class="btn btn-danger">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet (deactivate)="onDeactivate()"></router-outlet>

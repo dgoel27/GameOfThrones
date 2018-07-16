@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row" *ngIf="allCharacters.length>0">
+    <div *ngFor="let character of allCharacters" class="col-md-4 mb-4">
+      <div class="card text-center border border-info">
+        <div class="card-header text-info text-uppercase font-weight-bold">
+          {{character.aliases[0]}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <b>Gender : </b>{{character.gender}}</p>
+          <a [routerLink]="['/characters',character.url.split('/').reverse()[0]]" class="btn btn-info">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet (deactivate)="onDeactivate()"></router-outlet>

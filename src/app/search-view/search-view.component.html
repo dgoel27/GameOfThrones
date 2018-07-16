@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row searchArea">
+    <div class="col-8 mx-0 px-0">
+      <input class="searchBox w-100 p-4 text-light" type="text" placeholder="Search..." [(ngModel)]="searchText">
+    </div>
+    <div class="col-2 pt-4 pl-0 ml-0">
+      <i class="fas fa-search"></i>
+    </div>
+  </div>
+  <div class="row" *ngIf="allItems.length>0">
+    <div *ngFor="let item of allItems | filter : searchText | orderBy: ['name','aliases[0]']" class="col-md-4 mb-4">
+      <div class="col-12" *ngIf="item.isbn">
+        <div class="booksCard card text-center border border-danger">
+          <div class="card-header text-danger text-uppercase font-weight-bold">
+            {{item.name}}
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>ISBN : </b>{{item.isbn}}</p>
+            <a [routerLink]="['/books',item.url.split('/').reverse()[0]]" class="btn btn-danger">Details</a>
+          </div>
+          <div class="card-footer text-muted">Book Card</div>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="item.region || item.coatOfArms">
+        <div class="houseCard card text-center border border-success">
+          <div class="card-header text-success text-uppercase font-weight-bold">
+            {{item.name}}
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>Region : </b>{{item.region}}</p>
+            <a [routerLink]="['/houses',item.url.split('/').reverse()[0]]" class="btn btn-success">Details</a>
+          </div>
+          <div class="card-footer text-muted">House Card</div>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="item.gender">
+        <div class="characterCard card text-center border border-info">
+          <div class="card-header text-info text-uppercase font-weight-bold">
+            {{item.name?item.name:item.aliases[0]}}
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>Gender : </b>{{item.gender}}</p>
+            <a [routerLink]="['/characters',item.url.split('/').reverse()[0]]" class="btn btn-info">Details</a>
+          </div>
+          <div class="card-footer text-muted">Character Card</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

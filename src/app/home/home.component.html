@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-around">
+    <div class="col-12 col-lg-5 col-xl-4">
+      <a [routerLink]="['/books']"><img class="books img-fluid" src="assets/Books.JPG">
+      <h5 class="text-danger">Books</h5></a>
+    </div>
+    <div class="col-12 col-lg-5 col-xl-4">
+      <a [routerLink]="['/houses']"><img class="houses img-fluid" src="assets/Houses.jpg">
+      <h5 class="text-success">Houses</h5></a>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-around">
+    <div class="col-12 col-lg-5 col-xl-4">
+      <a [routerLink]="['/characters']"><img class="characters img-fluid" src="assets/Characters.jpg">
+      <h5 class="text-info">Characters</h5></a>
+    </div>
+    <div class="col-12 col-lg-5 col-xl-4">
+      <a [routerLink]="['/comingSoon']"><img class="coming-soon img-fluid" src="assets/Comingsoon.jpg">
+      <h5 class="text-warning">Stay Tuned</h5></a>
+    </div>
+  </div>
+</div>
+<router-outlet (deactivate)="onDeactivate()"></router-outlet>

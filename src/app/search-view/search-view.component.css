@@ -1,0 +1,74 @@
+.container {
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.booksCard {
+    box-shadow: 10px 5px 5px #dc3545;
+    opacity: 0.8;
+}
+
+.houseCard {
+    box-shadow: 10px 5px 5px #28a745;
+    opacity: 0.8;
+}
+
+.characterCard {
+    box-shadow: 10px 5px 5px #17a2b8;
+    opacity: 0.8;
+}
+
+.card:hover {
+    opacity: 1;
+}
+
+.searchArea {
+    margin : 5vh 0 15vh 10vw;
+    width: 100%;
+}
+
+.searchBox {
+    background-color: transparent;
+    outline: none;
+    border-width : 0 0 2px 0;
+    border-color: transparent transparent silver transparent;
+    font-size: 40px;
+}
+
+.fa-search {
+    font-size: 50px; 
+    color: silver;
+}
+
+@media screen and (max-width: 420px) {
+
+    .container {
+        margin-top: 15vh;
+    }
+
+    .card {
+        opacity: 1;
+    }
+
+    .searchArea {
+        margin : 0 0 10vh 10vw;
+        width: 100%;
+    }
+
+    .searchBox {
+        font-size: 20px;
+    }
+
+    .fa-search {
+        font-size: 40px; 
+    }
+}
+
+@media screen and (min-width: 420px) and (max-width: 1024px) {
+
+    .card  {
+        opacity: 1;
+    }
+
+}

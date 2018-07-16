@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row" *ngIf="allHouses.length>0">
+    <div *ngFor="let house of allHouses" class="col-md-4 mb-4">
+      <div class="card text-center border border-success">
+        <div class="card-header text-success text-uppercase font-weight-bold">
+          {{house.name}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <b>Region : </b>{{house.region}}</p>
+          <a [routerLink]="['/houses',house.url.split('/').reverse()[0]]" class="btn btn-success">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet (deactivate)="onDeactivate()"></router-outlet>

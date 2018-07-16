@@ -1,0 +1,29 @@
+<div class="container bg-light">
+  <div class="row text-info" *ngIf="currentCharacter">
+    <div class="col-md-12">
+      <h2 class="text-light text-uppercase bg-info">{{currentCharacter.name?currentCharacter.name:currentCharacter.aliases[0]}}</h2>
+      <hr>    
+      <p>Gender : <b>{{currentCharacter.gender?currentCharacter.gender:'N/A'}}</b></p>
+      <hr>
+      <p>Culture : <b>{{currentCharacter.culture?currentCharacter.culture:'N/A'}}</b></p>
+      <hr>
+      <p>Born : <b>{{currentCharacter.born?currentCharacter.born:'N/A'}}</b></p>
+      <hr>
+      <p>Died : <b>{{currentCharacter.died?currentCharacter.died:'N/A'}}</b></p>
+      <hr>      
+      <p *ngIf="currentCharacter.titles.length!=undefined && currentCharacter.titles.length>0">Titles : <b><span *ngFor="let title of currentCharacter.titles;let first=first;let last=last">{{title?title:'N/A'}}{{last ? '' : ', '}}</span></b></p>
+      <hr>           
+      <p *ngIf="currentCharacter.tvSeries.length!=undefined && currentCharacter.tvSeries.length>0">TV Series : <b><span *ngFor="let tvSeries of currentCharacter.tvSeries;let first=first;let last=last">{{tvSeries?tvSeries:'N/A'}}{{last ? '' : ', '}}</span></b></p>
+      <hr>
+      <p>Played by <b>{{currentCharacter.playedBy[0]?currentCharacter.playedBy[0]:'N/A'}}</b></p>
+      <hr>      
+      <p>Father : <b>{{currentCharacter.father?currentCharacter.father:'N/A'}}</b></p>
+      <hr>            
+      <p>Mother : <b>{{currentCharacter.mother?currentCharacter.mother:'N/A'}}</b></p>
+      <hr>
+      <p>Spouse : <b>{{currentCharacter.spouse?currentCharacter.spouse:'N/A'}}</b></p>
+      <hr>      
+      <a class="btn btn-info text-light" (click)="goBackToPreviousPage()">Go Back</a>
+    </div>
+  </div>
+</div>

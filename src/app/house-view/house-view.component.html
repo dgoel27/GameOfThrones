@@ -1,0 +1,25 @@
+<div class="container bg-light">
+  <div class="row text-success" *ngIf="currentHouse">
+    <div class="col-md-12">
+      <h2 class="text-light text-uppercase bg-success">{{currentHouse.name?currentHouse.name:'N/A'}}</h2>
+      <hr>
+      <p>Region : <b>{{currentHouse.region?currentHouse.region:'N/A'}}</b></p>
+      <hr>
+      <p>Coat Of Arms : <b>{{currentHouse.coatOfArms?currentHouse.coatOfArms:'N/A'}}</b></p>
+      <hr>
+      <p>Words : <b>{{currentHouse.words?currentHouse.words:'N/A'}}</b></p>
+      <hr>
+      <p *ngIf="currentHouse.titles.length!=undefined && currentHouse.titles.length>0">Titles : <b><span *ngFor="let title of currentHouse.titles;let first=first;let last=last">{{title?title:'N/A'}}{{last ? '' : ', '}}</span></b></p>
+      <hr>
+      <p *ngIf="currentHouse.seats.length!=undefined && currentHouse.seats.length>0">Seats : <b><span *ngFor="let seat of currentHouse.seats;let first=first;let last=last">{{seat?seat:'N/A'}}{{last ? '' : ', '}}</span></b></p>
+      <hr>            
+      <p *ngIf="currentHouse.ancestralWeapons.length!=undefined && currentHouse.ancestralWeapons.length>0">Ancestral Weapons : <b><span *ngFor="let ancestralWeapon of currentHouse.ancestralWeapons;let first=first;let last=last">{{ancestralWeapon?ancestralWeapon:'N/A'}}{{last ? '' : ', '}}</span></b></p>
+      <hr>
+      <p>Founded : <b>{{currentHouse.founded? currentHouse.founded: 'N/A'}}</b></p>
+      <hr>            
+      <p>Died Out : <b>{{currentHouse.diedOut? currentHouse.diedOut: 'N/A'}}</b></p>
+      <hr>
+      <a class="btn btn-success text-light" (click)="goBackToPreviousPage()">Go Back</a>
+    </div>
+  </div>
+</div>

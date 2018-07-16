@@ -1,0 +1,22 @@
+.container {
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.card {
+    box-shadow: 10px 5px 5px #dc3545;
+    opacity: 0.8;
+}
+
+.card:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .card  {
+        opacity: 1;
+    }
+
+}
